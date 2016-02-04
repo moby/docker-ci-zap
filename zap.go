@@ -35,9 +35,12 @@ func main() {
 			HomeDir: location,
 			Flavour: 0,
 		}
-		err := hcsshim.DestroyLayer(info, foldername)
-		fmt.Println(err)
+		if err := hcsshim.DestroyLayer(info, foldername); err != nil {
+			fmt.Println("ERROR: ", err)
+		} else {
+			fmt.Println("INFO: Zapped successfully")
+		}
 	} else {
-		fmt.Println("Folder does not exist")
+		fmt.Println("ERROR: Folder does not exist")
 	}
 }
