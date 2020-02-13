@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/microsoft/hcsshim"
+	"github.com/Microsoft/hcsshim"
 )
 
 func folderexists(path string) bool {
